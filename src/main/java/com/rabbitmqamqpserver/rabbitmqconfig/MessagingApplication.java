@@ -50,7 +50,6 @@ public class MessagingApplication {
         return BindingBuilder.bind(appQueueSpecific()).to(appExchange()).with(ROUTING_KEY);
     }
 
-    // You can comment the two methods below to use the default serialization / deserialization (instead of JSON)
     @Bean
     public RabbitTemplate rabbitTemplate(final ConnectionFactory connectionFactory) {
         final var rabbitTemplate = new RabbitTemplate(connectionFactory);
